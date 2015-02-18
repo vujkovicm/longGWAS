@@ -7,7 +7,7 @@ FILE=$1
 CHR=$2
 
 #DIRECTORIES
-DIR=/mnt/isilon/aplenc/project/gwas/risk/longitudinal
+DIR=/myDir
 
 # remove first 6 columns
 cut -d " " -f 7- ${DIR}/${FILE}/${FILE}-${CHR}-eur-qc.raw > ${DIR}/${FILE}/${FILE}-${CHR}-eur-qc.tmp
