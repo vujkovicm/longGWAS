@@ -1,0 +1,26 @@
+In classical epi terms, longitudinal data stand for repeated measurements obtained of a trait within an individual over a period
+of time (e.g. multiple measurements of systolic blood pressure over time). Despite the availability of multiple time point
+measurements for each subject, many genetic analyses only use one single time point measurement or an average over all time
+points for each subject. Fortunately, methods have been developed to jointly analyze the genetic association with multiple time
+point measurements. Results from these methods have observed a substantial improvements in power.
+
+Mixed effects models are a popular choice for modeling longitudinal data. Gauderman et al. (2003) summarized that this method 
+in genome-wide analyses is represented by two basic approaches:
+
+i. The two-step approach, where repeated measurements of a phenotype are modeled by mixed effects models to reduce to one or 
+two summary statistics for each subject in the first step and then, these subject-specific statistics will be used in the 
+second step for the linkage or genetic analysis.
+
+ii. The joint modeling approach, e.g. a mixed effects model is used to jointly estimate genetic and longitudinal parameters. 
+For example, genetic parameters may include additive polygenic and additive major gene effects. Longitudinal parameters may
+include shared environmental and random environmental effects. The joint modeling approach has also been proposed for 
+genome-wide association mapping by Furlotte et al. (2012), available at http://genetics.cs.ucla.edu/longGWAS/.
+
+References
+Furlotte, N. A., Eskin, E., and Eyheramendy, S.
+Genome-wide association mapping with longitudinal data. 
+Genet. Epidemiol. 2012: 36, 463–471.
+
+Gauderman, W. J., Macgregor, S., Briollais, L., Scurrah, K., Tobin, M., Park, T., et al. 
+Longitudinal data analysis in pedigree studies. 
+Genet. Epidemiol. 2003: 25, S18–S28.
