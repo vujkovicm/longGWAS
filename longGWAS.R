@@ -4,7 +4,7 @@ source("/R/x86_64-redhat-linux-gnu-library/2.15/longGWAS/R/longGWAS.R")
 library("reshape")
 
 # directory
-dir <- "/mnt/isilon/aplenc/project/gwas/risk/longitudinal/abcdef/"
+dir <- "/myDir"
 
 # phenotype
 # the dataset cannot contain only missing phenotypes for an individual
