@@ -28,3 +28,9 @@ $PLINK --noweb \
  --remove  ${DIR}/longitudinal/${FILE}/longGWAS.remove \
  --out ${DIR}/longitudinal/myStudy-${CHR}
 
+# To get chr + location for the manhattan plot
+$PLINK --noweb \
+ --bfile ${DIR}/myStudy-${CHR} \
+ --make-just-bim  \
+ --remove  ${DIR}/longitudinal/${FILE}/longGWAS.remove \
+ --out ${DIR}/longitudinal/myStudy-${CHR}
