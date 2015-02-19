@@ -58,6 +58,6 @@ for (i in 1:23)
     	snps.full <- as.matrix(snps)
     	n <- nrow(phenos)
     	phenos.gwas <- longGWAS.gwas(phenos, n, m, K = K, snps = snps.full)
-    	phenos.pred <- longGWAS.predictRandomEffects(phenos, n, m, K, varComps = phenos.gwas)
+    	# phenos.pred <- longGWAS.predictRandomEffects(phenos, n, m, K, varComps = phenos.gwas)
     	save.image(file = paste(dir, "myStudy", i, ".RData", sep=""))
 }
