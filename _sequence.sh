@@ -10,3 +10,5 @@ done
 qsub gen_tped2bed.sh
 qsub gen_gcta.sh
 R CMD BATCH longGWAS.R
+R CMD BATCH get_P.R
+cat.sh
