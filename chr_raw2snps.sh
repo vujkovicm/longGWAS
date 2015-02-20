@@ -12,9 +12,6 @@ DIR=/myDir
 # remove first 6 columns
 cut -d " " -f 7- ${DIR}/myStudy-${CHR}.raw > ${DIR}/myStudy-${CHR}.tmp
 
-# remember header for later (SNP names)
-head -n 1 ${DIR}/myStudy-${CHR}.tmp > ${DIR}/myStudy-${CHR}.head
-
 # remove header
 sed -i "1d" ${DIR}/myStudy-${CHR}.tmp
 
