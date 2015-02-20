@@ -22,16 +22,16 @@ sed -i "s/2/1/g" ${DIR}/myStudy-${CHR}.tmp
 # transpose the dataset
 awk '
 {
-    for (i=1 ; i<=NF; i++)  {
+    for (i = 1 ; i <= NF; i++)  {
         a[NR, i] = $i
     }
 }
-NF>p { p=NF }
+NF > p { p = NF }
 END {
-    for(j=1; j<=p; j++) {
-        str = a[1,j]
-        for(i=2; i<=NR; i++){
-            str = str" "a[i,j];
+    for(j = 1; j <= p; j++) {
+        str = a[1, j]
+        for(i = 2; i <= NR; i++){
+            str = str" "a[i, j];
         }
         print str
     }
