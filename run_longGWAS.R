@@ -15,7 +15,7 @@ phenos <- as.matrix(pheno.df)
 m <- ncol(phenos)
 
 # take output from GCTA matrix and format it as a longGWAS kinship matrix
-FillGRMtriangle = function(prefix)
+fillGRMtriangle = function(prefix)
 {
         #  read .grm.gz as data frame
         gzFileName = paste(prefix, ".grm.gz", sep = "")
@@ -33,7 +33,7 @@ FillGRMtriangle = function(prefix)
         # then fill out the upper triangle with values from lower triangle
         for(i in 1:dim(df.new)[1])
         {
-                # identity line in the middle is 1
+                # set identity line / diagonal to 1
                 df.new[i, i] <- 1
 
                 # use symmetry to fill out the values
@@ -50,7 +50,7 @@ FillGRMtriangle = function(prefix)
 # create longGWAS kinship matrix
 K <- fillGRMtriangle(paste(dir, "myStudy-GCTA-output", sep = ""))
 
-# chromosome-separated analyses
+# run longGWAS
 for (i in 1:23)
 {
     	# link tothe genetic files
