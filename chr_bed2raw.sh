@@ -8,7 +8,7 @@
 # get chr from outside
 CHR=$1
 
-# directories
+# directory
 DIR=/myDir
 
 # BGI’s latest plink version
@@ -18,19 +18,19 @@ PLINK=/myApps/plink-1.9-x86_64/plink
 $PLINK --noweb \
  --bfile ${DIR}/myStudy-${CHR} \
  --recodeA \
- --remove  ${DIR}/longitudinal/${FILE}/longGWAS.remove \
- --out ${DIR}/longitudinal/myStudy-${CHR}
+ --remove  ${DIR}/patients_without_pheno.remove \
+ --out ${DIR}/myStudy-${CHR}
 
 # To make GCTA kinship matrix
 $PLINK --noweb \
  --bfile ${DIR}/myStudy-${CHR} \
  --recode transpose \
- --remove  ${DIR}/longitudinal/${FILE}/longGWAS.remove \
- --out ${DIR}/longitudinal/myStudy-${CHR}
+ --remove  ${DIR}/patients_without_pheno.remove \
+ --out ${DIR}/myStudy-${CHR}
 
 # To get chr + location for the manhattan plot
 $PLINK --noweb \
  --bfile ${DIR}/myStudy-${CHR} \
  --make-just-bim  \
- --remove  ${DIR}/longitudinal/${FILE}/longGWAS.remove \
- --out ${DIR}/longitudinal/myStudy-${CHR}
+ --remove  ${DIR}/patients_without_pheno.remove \
+ --out ${DIR}/myStudy-${CHR}
