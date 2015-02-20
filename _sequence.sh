@@ -11,7 +11,7 @@ do
 done
 
 # merge chr into genome for kinship calculations
-qsub snp_chr2genome.sh
+qsub chr2gen_tped2bed.sh
 
 # run kinship with GCTA (genome x 1)
 qsub run_gcta.sh
@@ -23,7 +23,7 @@ R CMD BATCH run_longGWAS.R
 R CMD BATCH get_P.R
 
 # merge chr to genome file 
-qsub p_chr2genome.sh
+qsub chr2gen_p.sh
 
 # run manhattan and qq-plots (genome x 1)
 R CMD BATCH run_Manhattan.R
