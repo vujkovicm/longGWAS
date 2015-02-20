@@ -23,7 +23,7 @@ R CMD BATCH run_longGWAS.R
 R CMD BATCH get_P.R
 
 # merge chr to genome file 
-p_chr2genome.sh
+qsub p_chr2genome.sh
 
 # run manhattan and qq-plots (genome x 1)
 R CMD BATCH run_Manhattan.R
