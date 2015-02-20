@@ -48,7 +48,7 @@ FillGRMtriangle = function(prefix)
 }
 
 # create longGWAS kinship matrix
-K <- fillGRMtriangle(paste(dir, "myStudy.snps", sep = ""))
+K <- fillGRMtriangle(paste(dir, "myStudy-GCTA-output", sep = ""))
 
 # chromosome-separated analyses
 for (i in 1:23)
