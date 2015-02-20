@@ -14,6 +14,21 @@ pheno.df <- read.table(paste(dir, "phenotype_no_header_no_id_missing_as_NA.txt",
 phenos <- as.matrix(pheno.df)
 m <- ncol(phenos)
 
+# create longGWAS kinship matrix
+K <- fillGRMtriangle(paste(dir, "myStudy-GCTA-output", sep = ""))
+
+# run longGWAS
+for (i in 1:23)
+{
+    	# link tothe genetic files
+    	snps <- read.table(paste(dir, "myStudy", i, ".snps", sep = ""))
+    	snps.full <- as.matrix(snps)
+    	n <- nrow(phenos)
+    	phenos.gwas <- longGWAS.gwas(phenos, n, m, K = K, snps = snps.full)
+    	# phenos.pred <- longGWAS.predictRandomEffects(phenos, n, m, K, varComps = phenos.gwas)
+    	save.image(file = paste(dir, "myStudy", i, ".RData", sep = ""))
+}
+
 # take output from GCTA matrix and format it as a longGWAS kinship matrix
 fillGRMtriangle = function(prefix)
 {
@@ -45,19 +60,4 @@ fillGRMtriangle = function(prefix)
         # save as matrix
         matrix.new <- as.matrix(df.new)
         return (matrix.new)
-}
-
-# create longGWAS kinship matrix
-K <- fillGRMtriangle(paste(dir, "myStudy-GCTA-output", sep = ""))
-
-# run longGWAS
-for (i in 1:23)
-{
-    	# link tothe genetic files
-    	snps <- read.table(paste(dir, "myStudy", i, ".snps", sep = ""))
-    	snps.full <- as.matrix(snps)
-    	n <- nrow(phenos)
-    	phenos.gwas <- longGWAS.gwas(phenos, n, m, K = K, snps = snps.full)
-    	# phenos.pred <- longGWAS.predictRandomEffects(phenos, n, m, K, varComps = phenos.gwas)
-    	save.image(file = paste(dir, "myStudy", i, ".RData", sep = ""))
 }
