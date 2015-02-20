@@ -2,9 +2,11 @@
 #$ -cwd
 
 # transform data into a longGWAS accepted .snps file
+
+# get chr from outside
 CHR=$2
 
-#DIRECTORIES
+# directory
 DIR=/myDir
 
 # remove first 6 columns
