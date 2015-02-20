@@ -1,13 +1,13 @@
 #!/bin/bash
 #$ -cwd
 
-# (chr x 23)
+# plink export and manual transform (chr x 23)
 for i in {1..23}
 do
-    # export plink data to transform and make it longGWAS compatible 
-    qsub chr_recodeA.sh $i
-    # make .snps file for longGWAS 
-    qsub chr_transform.sh $i
+    # export plink data with recodeA option
+    qsub chr_bed2raw.sh $i
+    # transform .raw to .snps file for longGWAS 
+    qsub chr_raw2snps.sh $i
 done
 
 # merge chr into genome for kinship calculations
