@@ -33,7 +33,7 @@ for (i in 1:23)
 fillGRMtriangle = function(prefix)
 {
         #  read .grm.gz as data frame
-        gzFileName = paste(prefix, ".grm.gz", sep = "")
+        gzFileName <- paste(prefix, ".grm.gz", sep = "")
         df <- read.table(gzFileName, sep = "\t", F)
 
         # remove nr of observations (V3)
