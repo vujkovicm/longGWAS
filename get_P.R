@@ -6,7 +6,7 @@ dir <- "/myDir"
 for (i in 1:23)
 {
   # load workspace as saved by longGWAS
-  load(paste(dir, "abcdef-", i, ".RData", sep = ""))
+  load(paste(dir, "myStudy-", i, ".RData", sep = ""))
 
   # convert the p-values from longGWAS to a data-frame
   ##  longGWAS output
