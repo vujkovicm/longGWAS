@@ -18,12 +18,12 @@ for (i in 1:23)
   
   # import the loci (chr and bp) from bim file
   bim <- read.table(paste(dir, "myStudy-", i, ".bim", sep = ""), F, sep = "\t")
-  bim[6]<-NULL
-  bim[5]<-NULL
-  bim[3]<-NULL
-  colnames(bim)[1]<-"CHR"
-  colnames(bim)[2]<-"SNP"
-  colnames(bim)[3]<-"BP"
+  bim[6] <- NULL
+  bim[5] <- NULL
+  bim[3] <- NULL
+  colnames(bim)[1] <- "CHR"
+  colnames(bim)[2] <- "SNP"
+  colnames(bim)[3] <- "BP"
 
   # merge 
   snp.p <- cbind(bim, p)
