@@ -1,7 +1,7 @@
 #!/bin/bash
 #$ -cwd
 
-#DIRECTORIES
+# directory
 DIR=/myDir
 
 # Estimate the relatedness from all the autosomal SNPs
