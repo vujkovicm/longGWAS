@@ -1,11 +1,7 @@
-In classical epi terms, longitudinal data stand for repeated measurements obtained of a trait within an individual over a period
-of time (e.g. multiple measurements of systolic blood pressure over time). Despite the availability of multiple time point
-measurements for each subject, many genetic analyses only use one single time point measurement or an average over all time
-points for each subject. Fortunately, methods have been developed to jointly analyze the genetic association with multiple time
-point measurements. Results from these methods have observed a substantial improvements in power.
-
-Mixed effects models are a popular choice for modeling longitudinal data. Gauderman et al. (2003) summarized that this method 
-in genome-wide analyses is represented by two basic approaches:
+Longitudinal data are measures obtained of a trait within an individual over a period of time (e.g. repeated measurements of systolic blood pressure over time). Despite the availability of multiple time point measurements for each subject, many genetic analyses only use one single time point measurement or an average over all time points for each subject. Some methods have been developed to jointly analyze the genetic association with multiple time point measurements. Mixed effects models are a popular choice for modeling longitudinal data. Gauderman et al. (2003) summarized that this method for genetic analyses using longitudinal data is divided by two basic approaches:  
+i.	In the two-step approach, repeated measurements of a phenotype is modeled by mixed effects models to reduce the phenotype variable to a summary statistic (e.g. taking the average, or performing a principal components analysis) for each subject in the first step and use the summarized statistic as the outcome in the genetic analysis. 
+ii.	In the joint modeling approach, a mixed effects model is used to jointly estimate genetic and longitudinal parameters. Longitudinal parameters may include shared environmental and random environmental effects. The joint modeling approach has also been proposed for genome-wide association mapping by Furlotte et al. (2012). Furlotte’s method is a hybrid interpretation of EMMA (Kang et al. 2008) and myFastLMM (Lippert et al. 2001). It fits a linear mixed model (LMM) with two variance components, distinguishing the variance explained of the phenotype into genetic (g) and environmental (e). Copy/Paste: “The basic idea is that when the variance of y has this structure V = g*K + e*I we can rotate the data by the eigenvectors of K and then perform essentially basic linear regression where the residual i has variance g*lambda_i + e where lambda_i is the ith eigenvalue for K.  All calculations are then based on this idea.” 
+Results from these studies confirm an improved power when all time points are jointly analyzed. 
 
 i. The two-step approach, where repeated measurements of a phenotype are modeled by mixed effects models to reduce to one or 
 two summary statistics for each subject in the first step and then, these subject-specific statistics will be used in the 
@@ -17,10 +13,21 @@ include shared environmental and random environmental effects. The joint modelin
 genome-wide association mapping by Furlotte et al. (2012), available at http://genetics.cs.ucla.edu/longGWAS/.
 
 References
-Furlotte, N. A., Eskin, E., and Eyheramendy, S.
-Genome-wide association mapping with longitudinal data. 
-Genet. Epidemiol. 2012: 36, 463–471.
-
 Gauderman, W. J., Macgregor, S., Briollais, L., Scurrah, K., Tobin, M., Park, T., et al. 
 Longitudinal data analysis in pedigree studies. 
-Genet. Epidemiol. 2003: 25, S18–S28.
+Genet. Epidemiol 2003, 25, S18–S28. 
+
+Furlotte, N. A., Eskin, E., and Eyheramendy, S. 
+Genome-wide association mapping with longitudinal data. 
+Genet. Epidemiol 2012. 36, 463–471. 
+http://genetics.cs.ucla.edu/longGWAS/
+
+Kang, H. M., Zaitlen, N. A., Wade, C. M., Kirby, A., Heckerman, D., Daly, M. J., & Eskin, E. 
+Efficient control of population structure in model organism association mapping. 
+Genetics 2008, 178, 1709-1723.
+http://mouse.cs.ucla.edu/emma/ 
+
+Lippert, C., Listgarten, J., Liu,Y., Kadie, C.M., Davidson, R.I., Heckerman,D. 
+FaST linear mixed models for genome-wide association studies. 
+Nature Methods 2011, 8: 833-835 
+http://research.microsoft.com/en-us/um/redmond/projects/mscompbio/fastlmm/
