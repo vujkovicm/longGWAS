@@ -5,13 +5,13 @@
 # make sure to exclude individuals with no phenotype data
 # longGWAS will not work if there are invidividuals with no phenotype data
 
-CHR=$2
+# get chr from outside
+CHR=$1
 
-#DIRECTORIES
+# directories
 DIR=/myDir
 
-#EXECUTABLES
-#BGI’s latest plink version
+# BGI’s latest plink version
 PLINK=/myApps/plink-1.9-x86_64/plink
 
 # To make custom-SNP file for longGWAS
