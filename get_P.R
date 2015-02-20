@@ -17,7 +17,7 @@ for (i in 1:23)
   colnames(p)[1] <- "P"
   
   # import the loci (chr and bp) from bim file
-  bim <- read.table(paste(dir, "abcdef-", i, "-eur-qc.bim", sep = ""), F, sep = "\t")
+  bim <- read.table(paste(dir, "myStudy-", i, ".bim", sep = ""), F, sep = "\t")
   bim[6]<-NULL
   bim[5]<-NULL
   bim[3]<-NULL
@@ -29,6 +29,6 @@ for (i in 1:23)
   snp.p <- cbind(bim, p)
 
   # Export
-  write.table(snp.p, paste(dir, "abcdef-", i, ".p", sep = ""), sep = "\t", quote = F, col.names = F, row.names = F)
+  write.table(snp.p, paste(dir, "myStudy-", i, ".p", sep = ""), sep = "\t", quote = F, col.names = F, row.names = F)
 }
 
