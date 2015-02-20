@@ -4,7 +4,7 @@
 # transform data into a longGWAS accepted .snps file
 
 # get chr from outside
-CHR=$2
+CHR=$1
 
 # directory
 DIR=/myDir
